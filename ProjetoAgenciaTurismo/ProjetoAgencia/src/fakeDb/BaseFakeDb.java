@@ -18,8 +18,6 @@ public abstract class BaseFakeDb<TDominio>{
         this.preencherDados();
     }
     
-    protected abstract void preencherDados(){
-        
-    }
+    protected abstract void preencherDados();
 
 }

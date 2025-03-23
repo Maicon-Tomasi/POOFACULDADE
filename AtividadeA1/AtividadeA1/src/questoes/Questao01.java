@@ -1,7 +1,5 @@
 package questoes;
 
-import java.util.Scanner;
-
 public class Questao01 extends BaseExecutarQuestoes{
     private Integer num1;
     private Integer num2;
@@ -26,10 +24,13 @@ public class Questao01 extends BaseExecutarQuestoes{
     public Questao01(Integer num1, Integer num2) {
         this.num1 = num1;
         this.num2 = num2;
-        realizaComparacao();
+        this.realizaComparacao();
     }
 
     public void realizaComparacao(){
+        if (this.num1 == this.num2) {
+            System.out.println("os numeros são iguais");
+        }
         this.maior = Math.max(this.num1, this.num2);
     }
   
