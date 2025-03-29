@@ -2,42 +2,32 @@ package dominio.pessoa;
 
 import java.time.LocalDate;
 
-public class Passageiro extends BasePessoa{
+public class Passageiro extends BasePessoa {
     private String documentoPessoal;
-    private String numeroDoCartao;
-
+    private String numeroDeCartao;
     public String getDocumentoPessoal() {
         return documentoPessoal;
     }
-
     public void setDocumentoPessoal(String documentoPessoal) {
         this.documentoPessoal = documentoPessoal;
     }
-
-    public String getNumeroDoCartao() {
-        return numeroDoCartao;
+    public String getNumeroDeCartao() {
+        return numeroDeCartao;
     }
-
-    public void setNumeroDoCartao(String numeroDoCartao) {
-        this.numeroDoCartao = numeroDoCartao;
+    public void setNumeroDeCartao(String numeroDeCartao) {
+        this.numeroDeCartao = numeroDeCartao;
     }
-
-    public Passageiro(long codigo, LocalDate dataDeIclusao, LocalDate dataDeAlteracao, String nome, String telefone,
-            String email, String documentoPessoal, String numeroDoCartao) {
-        super(codigo, dataDeIclusao, dataDeAlteracao, nome, telefone, email);
+    public Passageiro(long codigo, LocalDate dataDeInclusao, LocalDate dataDeAlteracao, String nome, String telefone,
+            String email, String documentoPessoal, String numeroDeCartao) {
+        super(codigo, dataDeInclusao, dataDeAlteracao, nome, telefone, email);
         this.documentoPessoal = documentoPessoal;
-        this.numeroDoCartao = numeroDoCartao;
+        this.numeroDeCartao = numeroDeCartao;
     }
-
     @Override
     public String toString() {
-        return "Passageiro [codigo=" + codigo + ", documentoPessoal=" + documentoPessoal + ", dataDeIclusao="
-                + dataDeIclusao + ", numeroDoCartao=" + numeroDoCartao + ", nome=" + nome + ", dataDeAlteracao="
+        return "Passageiro [codigo=" + codigo + ", documentoPessoal=" + documentoPessoal + ", dataDeInclusao="
+                + dataDeInclusao + ", numeroDeCartao=" + numeroDeCartao + ", nome=" + nome + ", dataDeAlteracao="
                 + dataDeAlteracao + ", telefone=" + telefone + ", email=" + email + "]";
     }
-
-   
-
-    
     
 }

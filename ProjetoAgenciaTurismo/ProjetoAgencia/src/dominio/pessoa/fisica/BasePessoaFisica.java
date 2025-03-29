@@ -5,11 +5,9 @@ import java.time.LocalDate;
 import dominio.pessoa.BasePessoa;
 
 public abstract class BasePessoaFisica extends BasePessoa{
-   
     protected String rg;
     protected String cpf;
     protected LocalDate dataDeNascimento;
-
     public String getRg() {
         return rg;
     }
@@ -28,15 +26,12 @@ public abstract class BasePessoaFisica extends BasePessoa{
     public void setDataDeNascimento(LocalDate dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
-    
-    public BasePessoaFisica(long codigo, LocalDate dataDeIclusao, LocalDate dataDeAlteracao, String nome,
+    public BasePessoaFisica(long codigo, LocalDate dataDeInclusao, LocalDate dataDeAlteracao, String nome,
             String telefone, String email, String rg, String cpf, LocalDate dataDeNascimento) {
-        super(codigo, dataDeIclusao, dataDeAlteracao, nome, telefone, email);
+        super(codigo, dataDeInclusao, dataDeAlteracao, nome, telefone, email);
         this.rg = rg;
         this.cpf = cpf;
         this.dataDeNascimento = dataDeNascimento;
     }
-
-    
     
 }

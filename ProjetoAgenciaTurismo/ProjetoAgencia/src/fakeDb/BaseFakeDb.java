@@ -1,23 +1,19 @@
-package fakeDb;
+package fakedb;
 
 import java.util.ArrayList;
 
-public abstract class BaseFakeDb<TDominio>{
-    protected ArrayList<TDominio> instacia;
-
-    public ArrayList<TDominio> getInstacia() {
-        if(this.instacia == null){
-            this.instacia = new ArrayList<>();
+public abstract class BaseFakeDB<TDominio> {
+    protected ArrayList<TDominio> instancia;
+    public ArrayList<TDominio> getInstancia(){
+        if (this.instancia == null){
+            this.instancia = new ArrayList<>();
         }
-
-        return this.instacia;
+        return this.instancia;
     }
-
-    public BaseFakeDb(){
-        this.instacia = new ArrayList<>();
+    public BaseFakeDB(){
+        this.instancia = new ArrayList<>();
         this.preencherDados();
     }
-    
-    protected abstract void preencherDados();
 
+    protected abstract void preencherDados();
 }

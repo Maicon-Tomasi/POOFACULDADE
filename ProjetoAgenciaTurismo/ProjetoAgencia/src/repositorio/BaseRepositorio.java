@@ -2,20 +2,22 @@ package repositorio;
 
 import java.util.ArrayList;
 
-import fakeDb.BaseFakeDb;
+import fakedb.BaseFakeDB;
 
-public abstract class BaseRepositorio<TDominio>{
-    protected BaseFakeDb<TDominio> baseDeDados;
+public abstract class BaseRepositorio<TDominio> {
+    
+    protected BaseFakeDB<TDominio> baseDeDados;
 
     public abstract TDominio create(TDominio instancia);
-    
-    public abstract TDominio read(long codigo);
+
+    public abstract TDominio read(Long codigo);
 
     public ArrayList<TDominio> read(){
-        return this.baseDeDados.getInstacia();
+        return this.baseDeDados.getInstancia();
     }
-    
+
     public abstract TDominio update(TDominio instancia);
-    
-    public abstract TDominio delete(long codigo);
+
+    public abstract TDominio delete(Long codigo);
+
 }

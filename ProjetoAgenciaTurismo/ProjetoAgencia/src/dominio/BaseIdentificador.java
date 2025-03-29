@@ -15,5 +15,4 @@ public abstract class BaseIdentificador {
         this.codigo = codigo;
     }
 
-    
 }

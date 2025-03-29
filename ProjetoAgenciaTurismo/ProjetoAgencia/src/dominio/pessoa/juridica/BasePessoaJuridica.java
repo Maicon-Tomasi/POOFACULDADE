@@ -4,13 +4,12 @@ import java.time.LocalDate;
 
 import dominio.pessoa.BasePessoa;
 
-public class BasePessoaJuridica extends BasePessoa{
+public abstract class BasePessoaJuridica extends BasePessoa {
 
     protected String cnpj;
     protected String inscricaoEstadual;
     protected LocalDate dataInicioVinculo;
     protected LocalDate dataFinalVinculo;
-
     public String getCnpj() {
         return cnpj;
     }
@@ -35,18 +34,14 @@ public class BasePessoaJuridica extends BasePessoa{
     public void setDataFinalVinculo(LocalDate dataFinalVinculo) {
         this.dataFinalVinculo = dataFinalVinculo;
     }
-
-    
-    public BasePessoaJuridica(long codigo, LocalDate dataDeIclusao, LocalDate dataDeAlteracao, String nome,
+    public BasePessoaJuridica(long codigo, LocalDate dataDeInclusao, LocalDate dataDeAlteracao, String nome,
             String telefone, String email, String cnpj, String inscricaoEstadual, LocalDate dataInicioVinculo,
             LocalDate dataFinalVinculo) {
-        super(codigo, dataDeIclusao, dataDeAlteracao, nome, telefone, email);
+        super(codigo, dataDeInclusao, dataDeAlteracao, nome, telefone, email);
         this.cnpj = cnpj;
         this.inscricaoEstadual = inscricaoEstadual;
         this.dataInicioVinculo = dataInicioVinculo;
         this.dataFinalVinculo = dataFinalVinculo;
     }
-
-    
     
 }

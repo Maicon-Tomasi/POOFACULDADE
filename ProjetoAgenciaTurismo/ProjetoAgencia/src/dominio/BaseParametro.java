@@ -3,29 +3,24 @@ package dominio;
 import java.time.LocalDate;
 
 public abstract class BaseParametro extends BaseIdentificador {
-    protected LocalDate dataDeIclusao;
+    protected LocalDate dataDeInclusao;
     protected LocalDate dataDeAlteracao;
-
-    public LocalDate getDataDeIclusao() {
-        return dataDeIclusao;
+    public LocalDate getDataDeInclusao() {
+        return dataDeInclusao;
     }
-
-    public void setDataDeIclusao(LocalDate dataDeIclusao) {
-        this.dataDeIclusao = dataDeIclusao;
+    public void setDataDeInclusao(LocalDate dataDeInclusao) {
+        this.dataDeInclusao = dataDeInclusao;
     }
-
     public LocalDate getDataDeAlteracao() {
         return dataDeAlteracao;
     }
-
     public void setDataDeAlteracao(LocalDate dataDeAlteracao) {
         this.dataDeAlteracao = dataDeAlteracao;
     }
- 
-    public BaseParametro(long codigo, LocalDate dataDeIclusao, LocalDate dataDeAlteracao) {
+    public BaseParametro(long codigo, LocalDate dataDeInclusao, LocalDate dataDeAlteracao) {
         super(codigo);
-        this.dataDeIclusao = dataDeIclusao;
+        this.dataDeInclusao = dataDeInclusao;
         this.dataDeAlteracao = dataDeAlteracao;
     }
-
+        
 }

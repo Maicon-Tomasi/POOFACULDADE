@@ -4,30 +4,29 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import dominio.pessoa.Passageiro;
-import fakeDb.PassageiroFakeDb;
+import fakedb.PassageiroFakeDB;
 
-public class PassageiroRepo extends BaseRepositorio<Passageiro>{
-    private PassageiroFakeDb fakeDb;
-
+public class PassageiroRepo extends BaseRepositorio<Passageiro> {
+    private PassageiroFakeDB fakeDB;
     public PassageiroRepo(){
-        this.fakeDb = new PassageiroFakeDb();
-        this.baseDeDados = this.fakeDb;
+        this.fakeDB = new PassageiroFakeDB();
+        this.baseDeDados = this.fakeDB;
     }
 
     @Override
     public Passageiro create(Passageiro instancia) {
-        Passageiro p  = this.baseDeDados.getInstacia().getLast();
+        Passageiro p = this.baseDeDados.getInstancia().getLast();
         Long chave = p.getCodigo() + 1;
         instancia.setCodigo(chave);
-        this.baseDeDados.getInstacia().add(instancia);
+        this.baseDeDados.getInstancia().add(instancia);
         return instancia;
     }
 
     @Override
-    public Passageiro read(long codigo) {
-        ArrayList<Passageiro> lista = this.baseDeDados.getInstacia();
+    public Passageiro read(Long codigo) {
+        ArrayList<Passageiro> lista = this.baseDeDados.getInstancia();
         for (Passageiro passageiro : lista) {
-            if (passageiro.getCodigo() == codigo) {
+            if (passageiro.getCodigo() == codigo){
                 return passageiro;
             }
         }
@@ -37,29 +36,25 @@ public class PassageiroRepo extends BaseRepositorio<Passageiro>{
     @Override
     public Passageiro update(Passageiro instancia) {
         Passageiro alterado = this.read(instancia.getCodigo());
-        if (alterado != null) {
+        if (alterado != null){
             alterado.setDataDeAlteracao(LocalDate.now());
             alterado.setDocumentoPessoal(instancia.getDocumentoPessoal());
             alterado.setEmail(instancia.getEmail());
             alterado.setNome(instancia.getNome());
-            alterado.setNumeroDoCartao(instancia.getNumeroDoCartao());
+            alterado.setNumeroDeCartao(instancia.getNumeroDeCartao());
             alterado.setTelefone(instancia.getTelefone());
-
             return alterado;
         }
-
         return alterado;
     }
-   
+
     @Override
-    public Passageiro delete(long codigo) {
+    public Passageiro delete(Long codigo) {
         Passageiro deletado = this.read(codigo);
-        if (deletado != null) {
-            this.baseDeDados.getInstacia().remove(deletado);
+        if(deletado != null){
+            this.baseDeDados.getInstancia().remove(deletado);
             return deletado;
         }
-
         return deletado;
     }
-    
 }
